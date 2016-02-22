@@ -8,4 +8,8 @@ class Test {
     function init() {
 
     }
+
+    function branch_init() {
+
+    }
 }
