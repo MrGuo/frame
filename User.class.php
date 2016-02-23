@@ -15,5 +15,6 @@ class User {
 
     public function fetchData() {
         echo "1";
+        echo "2";
     }
 }
