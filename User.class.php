@@ -12,4 +12,8 @@ class User {
     public function fetchDataFromDB() {
         return array();
     }
+
+    public function fetchData() {
+        echo "1";
+    }
 }
