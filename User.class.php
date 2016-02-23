@@ -8,4 +8,8 @@ class User {
     public function GetUserByName() {
         return array();
     }
+
+    public function fetchDataFromDB() {
+        return array();
+    }
 }
