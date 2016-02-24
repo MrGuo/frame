@@ -33,6 +33,7 @@ class Autoloader {
         if (isset($this->root_path_setting[$pieces[0]])) {
             $root_path = $this->root_path_setting[$pieces[0]];
         }
+        $root_path = strtolower($root_path);
         // get rid of the leading root namespace
         array_shift($pieces);
 
