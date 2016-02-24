@@ -61,6 +61,8 @@ class Application {
     public function run() {
         $this->setRequireMent();
         $this->middleware[0]->call();
+        //下面是主干的一个未提交的修改(分支修改一下)
+        $this->middleware[0]->call_delay();
     }
 
     private function setRequireMent() {
