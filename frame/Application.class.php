@@ -66,6 +66,7 @@ class Application {
     private function setRequireMent() {
         //instance cnnfig filter
         ConfigFilter::instance()->setApplication($this); 
+
         //log
         $this->container->singleton('log', function ($c) {
             $logWriter = is_object($c['logWriter']) ? $c['logWriter'] : new \Libs\Log\BasicLogWriter();
