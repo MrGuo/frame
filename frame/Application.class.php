@@ -61,7 +61,6 @@ class Application {
     public function run() {
         $this->setRequireMent();
         $this->middleware[0]->call();
-        //一个
     }
 
     private function setRequireMent() {
