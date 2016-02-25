@@ -26,5 +26,6 @@ class Config
         $this->configs->singleton($key, $value);
     }
 
+
 }
 
