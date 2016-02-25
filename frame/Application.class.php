@@ -62,6 +62,7 @@ class Application {
         $this->setRequireMent();
         $this->middleware[0]->call();
         //我加的
+        //smallwalk
     }
 
     private function setRequireMent() {
