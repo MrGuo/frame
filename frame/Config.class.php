@@ -25,5 +25,6 @@ class Config
     private function set($key, $value) {
         $this->configs->singleton($key, $value);
     }
+
 }
 
