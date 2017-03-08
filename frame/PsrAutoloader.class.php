@@ -1,6 +1,6 @@
 <?php
 
-class Autoloader {
+class PsrAutoloader {
 
 	/**
 	 * Singleton.
@@ -41,7 +41,8 @@ class Autoloader {
 			return empty($pieces) ? $root_path : $root_path . DIRECTORY_SEPARATOR . strtolower(implode(DIRECTORY_SEPARATOR, $pieces));
 		};
 
-        return $base_path() . "/{$class_name}.class.php";
+        //psr0
+		return str_replace('_', DIRECTORY_SEPARATOR, $base_path() . "/{$class_name}.class.php");
 	}
 
 	/**

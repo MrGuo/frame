@@ -17,6 +17,7 @@ class Application {
         $this->container = new \Frame\Helper\Set();
 
         $this->container->sapi_type = php_sapi_name();
+        
         $this->container->singleton('config', function ($c) {
              return new \Frame\Config();
         });
@@ -61,19 +62,16 @@ class Application {
     public function run() {
         $this->setRequireMent();
         $this->middleware[0]->call();
-        //我加的
-        //smallwalk
-        //smallwalk
     }
 
     private function setRequireMent() {
-        //instance cnnfig filter
+        //instance config filter
         ConfigFilter::instance()->setApplication($this); 
-
         //log
         $this->container->singleton('log', function ($c) {
             $logWriter = is_object($c['logWriter']) ? $c['logWriter'] : new \Libs\Log\BasicLogWriter();
             return new \Libs\Log\Log($logWriter);
         });
     }
+
 }

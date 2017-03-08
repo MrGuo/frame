@@ -2,9 +2,10 @@
 
 namespace Frame;
 
-abstract class Module {
+abstract class Script {
 
     protected $app;
+
     protected $hooks = array(
         'before' => array(),
         'after' => array()
@@ -26,7 +27,8 @@ abstract class Module {
         $this->applyHook('after');
     }
 
-    public function hook($name, $callable, $priority = 10) {
+    public function hook($name, $callable, $priority = 10)
+    {
         if (!isset($this->hooks[$name])) {
             $this->hooks[$name] = array(array());
         }
@@ -35,7 +37,8 @@ abstract class Module {
         }
     }
 
-    public function applyHook($name, $hookArg = null) {
+    public function applyHook($name, $hookArg = null)
+    {
         if (!empty($this->hooks[$name])) {
             // Sort by priority, low to high, if there's more than one priority
             if (count($this->hooks[$name]) > 1) {
@@ -49,9 +52,5 @@ abstract class Module {
                 }
             }
         }
-    }
-
-    public function asyncJob() {
-        
     }
 }
