@@ -31,24 +31,6 @@ class Utilities {
         return $retHash;
     }
 
-    public static function changeDataKeys($data, $keyName, $toLowerCase=false) {
-        $resArr = array ();
-        if(empty($data)){
-            return false;
-        }
-        foreach ( $data as $v ) {
-            $k = $v [$keyName];
-            if( $toLowerCase === true ) {
-                $k = strtolower($k);
-            }
-            if(empty($k)) {
-                continue;
-            }
-            $resArr [$k] = $v;
-        }
-        return $resArr;
-    }
-	
     public static function sortArray($array, $order_by, $order_type = 'ASC') {
         if (!is_array($array)) {
             return array();
